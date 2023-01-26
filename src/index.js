@@ -1,6 +1,9 @@
 const express = require('express')
 const db = require("./db")
-const routerCategories = require("./routes/categories");
+const routesCategories = require("./routes/categories");
+const routesUser = require("./routes/users");
+const routesFinances = require("./routes/finances");
+
 
 const app = express()
 app.use(express.json());
@@ -12,7 +15,9 @@ app.get('/', (req, res) => {
   res.send('Olá, essa é a aplicação Wallet App')
 });
 
-app.use("/categories", routerCategories)
+app.use("/categories", routesCategories);
+app.use("/users", routesUser);
+app.use("/finances",routesFinances);
 
 app.get ("/categories", (req, res) => {
   db.query("SELECT * FROM categories", (error, response) => {
