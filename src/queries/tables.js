@@ -1,4 +1,5 @@
 const createTablesQueries = {
+
   createDatabase: () => {
     return {
       name: "create-database",
