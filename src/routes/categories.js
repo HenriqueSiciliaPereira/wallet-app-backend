@@ -85,7 +85,7 @@ router.put("/:id", async (req, res) => {
 
     
     if(!id) {
-  return res.status(400).json({ error: "Param idis mandatory."});
+  return res.status(400).json({ error: "Param id is mandatory."});
 } 
 
 if(name.length < 3) {
